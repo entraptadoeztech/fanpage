@@ -4,64 +4,630 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    <link href="css/main.css" rel="stylesheet"/>
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+
+}
+
+.topnav {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.header_gallery {
+    display: flex;
+    flex-direction: row;
+}
+
+.topmeny {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: 33%;
+}
+
+.topmeny a {
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 25px;
+    color: #e4e4e4;
+}
+
+.social {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.meny{
+    opacity: 0.72;
+    flex-grow: 2;
+    position: fixed;
+}
+
+.post-it, .post-it-hover {
+    flex-grow: 0.1;
+    right: 0;
+    position: absolute;
+}
+
+.remove {
+    display: none;
+}
+
+.container, .container2, .container3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container2 {
+    align-items: center;
+    background-color: pink;
+}
+
+.container3, .container {
+    background-color: violet;
+}
+
+.header {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #0f1724;
+    height: 500px;
+    text-align: center;
+}
+
+.header_mer {
+    background-color: #e56d68;
+    height: 500px;
+    text-align: center;
+}
+
+.links, .blue_links {
+    background-color: #2c7258;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow: auto;
+}
+
+.links a, .blue_links a {
+    font-size: 25px;
+    text-decoration: none;
+    color: #9fa0a5;
+}
+
+.links a:hover, .blue_links a:hover, .topmeny a:hover {
+    text-shadow: 0 0 30px #fff;
+}
+
+.blue_links {
+    background-color: #0f1724;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #9fa0a5;
+}
+
+.row1, .row2 {
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+}
+
+.puzzel9 img, .puzzel5 img {
+    margin-bottom: -5px;
+}
+
+.puzzel2, .puzzel7, .puzzel8 {
+    width: 40%;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    background-color: #0f1724;
+}
+
+.puzzel2 p, .puzzel4 p, .puzzel8 p, .puzzel7 p, .puzzel2_ipad p  {
+    color: #9fa0a5;
+}
+
+.puzzel4 {
+    width: 50%;
+    background-color: #2c7258;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.puzzel5 {
+    margin-bottom: 50px;
+}
+
+.puzzel7, .puzzel8 {
+    flex-grow: 1;
+}
+
+.puzzel7 {
+    background-color: #c24744;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    align-items: center;
+    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 2%;
+}
+
+.rad1, .rad2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 2%;
+    width: 95%;
+    justify-content: space-around;
+}
+
+.rad2 {
+    margin-bottom: 10px;
+}
+
+.square {
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    width: 100%;
+    background-color: #e4e4e4;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.info a, .info p {
+    text-decoration: none;
+    color: #0f1724;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    background-color: #88ab9e;
+    width: 350px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.decoration img {
+    margin-left: -20px;
+}
+
+.decor2 img {
+    margin-left: -30px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 700px;
+    margin-left: 30px;
+}
+
+.post, .post1 {
+    width: 100%;
+    background-color: #88ab9e;
+    padding: 10px;
+}
+
+.post1 {
+    margin-top: 10px;
+}
+
+#container {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background:#9fa0a5;
+    transition:1s;
+    height: 500px;
+}
+
+#container p {
+    color: #000;
+    opacity: 1;
+    text-align: right;
+    margin-right: 2%;
+
+    font-size: 40px;
+
+}
+
+#container:hover {
+    opacity: 0.3;
+}
+
+.sprite {
+    background-image: url(img/spritesheet.png);
+    display: block;
+}
+
+.sprite-facebook_icon {
+    width: 50px;
+    height: 50px;
+    background-position: -5px -5px;
+}
+
+.sprite-instagram_icon {
+    width: 50px;
+    height: 50px;
+    background-position: -65px -5px;
+}
+
+.sprite-twitter_icon {
+    width: 50px;
+    height: 50px;
+    background-position: -5px -65px;
+}
+
+.post h1, .post1 h1, .sidenav h1, .sidenav_iphone h1 {
+    color: #fff;
+}
+
+.post p, .post1 p {
+    font-size: 15px;
+    color: #fff;
+}
+
+.sidenav a, .sidenav_iphone a {
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.sidenav a:hover, .sidenav_iphone a:hover {
+    text-shadow: 2px 2px 22px rgba(80, 76, 74, 1);
+}
+
+.header_iphone5, .puzzel2_iphone, .puzzel5_iphone, .topmeny_iphone a,
+.social_iphone, .rad1_iphone, .rad2_iphone, .header_mer_iphone,
+.puzzel6_iphone, .puzzel9_iphone, .greyheader_iphone, .sidenav_iphone,
+.puzzel5_ipad, .header_ipad, .puzzel1_ipad, .puzzel2_ipad,
+.topmeny_ipad, .header_mer_ipad, .puzzel6_ipad, .greyheader_ipad {
+    display: none;
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    .header, .puzzel1, .puzzel3, .puzzel2, .puzzel4, .puzzel5,
+    .topmeny, .social, .rad1, .rad2, .header_mer, #container, .puzzel6,
+    .puzzel9, .greyheader, .sidenav, .post1_nere img, .post_nere img,
+    .inlägg_nere img, .meny_ner img {
+        display: none;
+    }
+
+    .header_iphone5, .puzzel2_iphone, .puzzel5_iphone,
+    .topmeny_iphone a, .social_iphone, .rad1_iphone, .rad2_iphone,
+    .header_mer_iphone, .puzzel6_iphone, .puzzel9_iphone,
+    .greyheader_iphone, .sidenav_iphone {
+        display:inline;
+    }
+
+    .body {
+        overflow-x: hidden;
+    }
+
+    .links a, .blue_links a{
+        font-size: 15px;
+    }
+
+    .links, .blue_links {
+        height: 40px;
+        margin-top: -10px;
+    }
+
+    .puzzel2_iphone {
+        color: #9fa0a5;
+        text-align: center;
+    }
+
+    .topmeny_iphone, .social_iphone {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .topmeny_iphone a {
+        font-size: 13px;
+        text-decoration: none;
+        margin: 5px;
+        color: #e4e4e4;
+    }
+
+    .social_iphone {
+        opacity: 0.8;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .header_gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rad1, .rad2, .row1, .row2 {
+        flex-direction: column;
+    }
+
+    .row1, .row2 {
+        height: 225px;
+    }
+
+    .header_mer_iphone {
+        background-color: #e56d68;
+    }
+
+    .puzzel8, .puzzel7 {
+        width: 100%;
+    }
+
+    .puzzel7 h1, .puzzel8 h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .puzzel7 p, .puzzel8 p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .puzzel7 {
+        background-color: #0f1724;
+    }
+
+    .puzzel9_iphone {
+        margin-top: 40px;
+    }
+
+    .posts {
+        margin-top: 5%;
+        width: 80%;
+        margin-left: -25px;
+    }
+
+    .sidenav_iphone {
+        height: 10%;
+        display: flex;
+        flex-direction: column;
+        background-color: #88ab9e;
+        padding-left: 15px;
+        padding-right: 20px;
+        width: 80%;
+        margin-left: 10px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .rubrik {
+        text-align: center;
+        margin-top: -12px;
+        margin-bottom: -10px;
+    }
+
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidenav_iphone a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        margin-top: -5px;
+    }
+
+    .puzzel5_iphone, .puzzel6_iphone, .puzzel9_iphone {
+        text-align: center;
+    }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 1) {
+
+    .puzzel3, .puzzel5, .header, .puzzel1, .puzzel2, .row2, .topmeny,
+    .social, .header_mer, .puzzel6, .greyheader, .post1_nere img,
+    .post_nere img, .inlägg_nere img, .meny_ner img {
+        display: none;
+    }
+
+    .header_ipad, .puzzel1_ipad, .puzzel2_ipad, .topmeny_ipad,
+    .social_iphone, .header_mer_ipad, .puzzel6_ipad, .greyheader_ipad {
+        display: inline;
+    }
+
+    .links, .blue_links {
+        height: 68px;
+        margin-top: -5px;
+    }
+
+    .links a {
+        font-size: 20px;
+    }
+
+    .puzzel1_ipad {
+        margin-right: 10px;
+        margin-left: -45px;
+    }
+
+    .puzzel2_ipad h1 {
+        font-size: 22px;
+    }
+
+    .puzzel2_ipad p {
+        font-size: 15px;
+    }
+
+    .puzzel4 {
+        width: 40%;
+    }
+
+    .puzzel4 p {
+        font-size: 12px;
+        margin-top: -15px;
+    }
+
+    .puzzel4 h1 {
+        font-size: 25px;
+        margin-top: 5px;
+    }
+
+    .wrapper {
+        height: 351px;
+    }
+
+    .social_iphone {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        opacity: 0.8;
+        margin-left: 40px;
+        margin-right: 40px;
+        height: 50px;
+        width: 250px;
+        margin-top: 50px;
+    }
+
+    .social_iphone a {
+        margin-right: 50px;
+    }
+
+    .topmeny_ipad {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin-top: 100px;
+        margin-left: -340px;
+    }
+
+    .topmeny_ipad a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #e4e4e4;
+        margin-left: 30px;
+    }
+
+    .row1 {
+        height: 600px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header_mer_ipad {
+        background-color: #c24744;
+    }
+
+    .sidenav {
+        height: 220px;
+        width: 270px;
+        margin-left: -15px;
+    }
+
+    .posts {
+        width: 650px;
+    }
+}
+    </style>
 </head>
 <body>
 <div class="container3">
     <div class="header_gallery">
-        <img src="./img/gallery.png">
+        <img src="img/gallery.png">
             <div class="social">
                 <a href="#"><i class="sprite sprite-facebook_icon"></i></a>
                 <a href="#"><i class="sprite sprite-instagram_icon"></i></a>
                 <a href="#"><i class="sprite sprite-twitter_icon"></i></a>
-            </div>
-            <div class="topmeny">
-                <a href="index.html">Startsida</a>
-                <a href="#">Galleri</a>
-                <a href="Intervju.html">Intervjuer</a>
-                <a href="fordjupning.html">Skådespelare</a>
-            </div>
-            <div class="topmeny_iphone">
-                <a href="index.html">Startsida</a>
-                <a href="#">Galleri</a>
-                <a href="Intervju.html">Intervjuer</a>
-                <a href="fordjupning.html">Skådespelare</a>
             </div>
             <div class="social_iphone">
                 <a href="#"><i class="sprite sprite-facebook_icon"></i></a>
                 <a href="#"><i class="sprite sprite-instagram_icon"></i></a>
                 <a href="#"><i class="sprite sprite-twitter_icon"></i></a>
             </div>
-            <div class="topmeny_ipad">
-                <a href="index.html">Startsida</a>
-                <a href="#">Galleri</a>
-                <a href="Intervju.html">Intervjuer</a>
-                <a href="fordjupning.html">Skådespelare</a>
-            </div>
         </div>
     <div id="wrapper">
         <div class="gallery">
             <div class="rad1">
                 <div class="square">
-                    <img src="./img/1.jpg">
+                    <img src="img/1.jpg">
                     <div class="info">
-                        <p>"Hanna Baker"<br>Spelad av
+                        <p>"Hanna Baker"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Katherine_Langford">Katherine Langford</a>
                         </p>
                     </div>
                 </div>
                 <div class="square">
-                    <img src="./img/2.jpg">
+                    <img src="img/2.jpg">
                     <div class="info">
-                        <p>"Sheri"<br>Spelad av
+                        <p>"Sheri"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Ajiona_Alexus">Ajiona Alexus</a>
                         </p>
                     </div>
                 </div>
                 <div class="square">
-                    <img src="./img/3.jpg">
+                    <img src="img/3.jpg">
                     <div class="info">
-                        <p>"Clay Jensen"<br>Spelad av
+                        <p>"Clay Jensen"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Dylan_Minnette">Dylan Minnette</a>
                         </p>
                     </div>
@@ -71,25 +637,25 @@
 
             <div class="rad1_iphone">
                 <div class="square">
-                    <img src="./img/1_iphone.jpg">
+                    <img src="img/1_iphone.jpg">
                     <div class="info">
-                        <p>"Hanna Baker"<br>
+                        <p>"Hanna Baker"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Katherine_Langford">Katherine Langford</a>
                         </p>
                     </div>
                 </div>
                 <div class="square">
-                    <img src="./img/2.jpg">
+                    <img src="img/2.jpg">
                     <div class="info">
-                        <p>"Sheri"<br>
+                        <p>"Sheri"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Ajiona_Alexus">Ajiona Alexus</a>
                         </p>
                     </div>
                 </div>
                 <div class="square">
-                    <img src="./img/3.jpg">
+                    <img src="img/3.jpg">
                     <div class="info">
-                        <p>"Clay Jensen"<br>
+                        <p>"Clay Jensen"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Dylan_Minnette">Dylan Minnette</a>
                         </p>
                     </div>
@@ -98,61 +664,26 @@
 
             <div class="rad2">
                 <div class="square">
-                    <img src="./img/4.jpg">
+                    <img src="img/4.jpg">
                     <div class="info">
-                        <p>"Tyler Down"<br>
+                        <p>"Tyler Down"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Devin_Druid">Devin Druid</a>
                         </p>
                     </div>
                 </div>
                 <div class="square">
-                    <img src="./img/5.jpg">
+                    <img src="img/5.jpg">
                     <div class="info">
-                        <p>"Justin Foley"<br>
+                        <p>"Justin Foley"<br>Played by
                             <a href="https://en.wikipedia.org/wiki/Brandon_Flynn">Brandon Flynn</a>
                         </p>
                     </div>
-                </div>
-                <div class="square">
-                    <img src="./img/6.jpg">
-                    <div class="info">
-                        <p>"Alex Standall"<br>
-                            <a href="https://en.wikipedia.org/wiki/Miles_Heizer">Miles Heizer</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="rad2_iphone">
-                <div class="square">
-                    <img src="./img/4.jpg">
-                    <div class="info">
-                        <p>"Tyler Down"<br>
-                            <a href="https://en.wikipedia.org/wiki/Devin_Druid">Devin Druid</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="square">
-                    <img src="./img/5.jpg">
-                    <div class="info">
-                        <p>"Justin Foley"<br>
-                            <a href="https://en.wikipedia.org/wiki/Brandon_Flynn">Brandon Flynn</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="square">
-                    <img src="./img/6.jpg">
-                    <div class="info">
-                        <p>"Alex Standall"<br>
-                            <a href="https://en.wikipedia.org/wiki/Miles_Heizer">Miles Heizer</a>
-                        </p>
-                    </div>
+         </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script src="./js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
