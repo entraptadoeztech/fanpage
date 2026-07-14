@@ -4,7 +4,9 @@
  		<meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
  		<title></title>
-		 <link href="/css/main.css" rel="stylesheet"/>
+		 <style>
+			 
+		 </style>
  	</head>
  <body>
     <div class="container">
@@ -12,36 +14,36 @@
         </div>
         <div class="header">
             <div onmouseover="img_over()" class="post-it">
-                <a href="/site/fordjupning.html">
-                    <img src="/site/img/post-it.png">
+                <a href="site/fordjupning.html">
+                    <img src="site/img/post-it.png">
                 </a>
             </div>
             <div onmouseout="img_out()" class="post-it-hover remove">
-                <a href="/site/Intervju.html">
-                    <img src="/site/img/post-it_hover.png">
+                <a href="site/Intervju.html">
+                    <img src="site/img/post-it_hover.png">
                 </a>
             </div>
-            <img src="/site/img/header1.png">
+            <img src="site/img/header1.png">
         </div>
         <div class="header_iphone5">
-            <img src="/site/img/header_iphone5.png">
+            <img src="site/img/header_iphone5.png">
         </div>
         <div class="header_ipad">
-            <img src="/site/img/header1_ipad.png">
+            <img src="site/img/header1_ipad.png">
         </div>
         <div class="links">
             <a href="#">Start the goddamn tape</a>
-            <a href="/site/gallery.html">Gallery</a>
-            <a href="/site/Intervju.html">idk</a>
-            <a href="/site/fordjupning.html">idk</a>
+            <a href="site/gallery.html">Gallery</a>
+            <a href="site/Intervju.html">idk</a>
+            <a href="site/fordjupning.html">idk</a>
         </div>
         <div class="wrapper">
             <div class="row1">
                 <div class="puzzel1">
-                    <img src="/site/img/puzzel1.jpg">
+                    <img src="site/img/puzzel1.jpg">
                 </div>
                 <div class="puzzel1_ipad">
-                    <img src="/site/img/puzzel1_ipad.jpg">
+                    <img src="site/img/puzzel1_ipad.jpg">
                 </div>
                 <div class="puzzel2_iphone">
                     <h1>Jay Asher, Thirteen Reasons Why</h1>
@@ -62,7 +64,7 @@
                         The only way to learn the secret... is to press play.</p>
                 </div>
                 <div class="puzzel3">
-                    <img src="/site/img/puzzel3.jpg">
+                    <img src="site/img/puzzel3.jpg">
                 </div>
             </div>
             <div class="row2">
@@ -72,14 +74,27 @@
                         Clay spends the night crisscrossing his town with Hannah as his guide. He becomes a firsthand witness to Hannah's pain, and as he follows Hannah’s recorded words throughout his town, what he discovers changes his life forever.</p>
                 </div>
                 <div class="puzzel5_iphone">
-                    <img src="/site/img/puzzel5_iphone.jpg">
+                    <img src="site/img/puzzel5_iphone.jpg">
                 </div>
                 <div class="puzzel5">
-                    <img src="/site/img/puzzel5.jpg">
+                    <img src="site/img/puzzel5.jpg">
                 </div>
             </div>
         </div>
     </div>
- <script src="/site/js/main.js"></script>
+ <script>
+	 /**
+ * Created by romina.asadi on 2017-04-24.
+ */
+function img_over() {
+    document.querySelector(".post-it").classList.add("remove");
+    document.querySelector(".post-it-hover").classList.remove("remove");
+}
+
+function img_out() {
+    document.querySelector(".post-it").classList.remove("remove");
+    document.querySelector(".post-it-hover").classList.add("remove");
+}
+ </script>
  </body>
  </html>
